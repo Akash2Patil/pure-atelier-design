@@ -16,11 +16,11 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
       <div className="w-full px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex w-1/2 max-w-[18rem] items-center sm:w-1/3 lg:w-1/4">
-            <img src={siteImages.logo} alt="The Design Atelier" loading="lazy" className="h-auto w-full max-h-16 object-contain object-left" />
+            <img src={siteImages.logo} alt="The Design Atelier" loading="lazy" className="h-auto w-full max-h-10 object-contain object-left" />
             <span className="sr-only">The Design Atelier</span>
           </Link>
 
@@ -29,7 +29,7 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-xs tracking-[0.2em] uppercase transition-colors duration-300 hover:text-accent ${
+                className={`relative text-xs tracking-[0.2em] uppercase transition-colors duration-300 hover:text-accent before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:origin-left before:bg-accent before:transition-all before:duration-300 hover:before:w-full ${
                   location.pathname === link.to ? "text-accent" : "text-muted-foreground"
                 }`}
               >
@@ -55,7 +55,7 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:text-accent ${
+                className={`relative text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:text-accent before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:origin-left before:bg-accent before:transition-all before:duration-300 hover:before:w-full ${
                   location.pathname === link.to ? "text-accent" : "text-muted-foreground"
                 }`}
               >

@@ -136,7 +136,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div ref={pageRef} className="pt-20">
+    <div ref={pageRef}>
       <PageHero
         label="Services"
         title="Full-Service Architecture, Interior, and Turnkey Solutions"
@@ -149,8 +149,8 @@ const Services = () => {
           <AnimatedSection>
             <div className="grid gap-8 lg:grid-cols-[0.8fr,1.2fr] lg:items-end" data-service-reveal>
               <div>
-                <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">What We Do</p>
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground max-w-3xl">
+                <p className="font-serif text-[40px] leading-tight text-foreground mb-3">What We Do</p>
+                <h1 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground max-w-3xl">
                   Design support from the first sketch to the final handover.
                 </h1>
               </div>
@@ -202,8 +202,8 @@ const Services = () => {
           <AnimatedSection>
             <div className="grid gap-8 lg:grid-cols-[0.72fr,1.28fr] lg:items-start" data-service-reveal>
               <div>
-                <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">Workflow Process</p>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
+                <p className="font-serif text-[40px] leading-tight text-foreground mb-3">Workflow Process</p>
+                <h2 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground">
                   Clear stages, steady decisions, better execution.
                 </h2>
               </div>
@@ -244,7 +244,6 @@ const Services = () => {
         description="From early design to construction delivery, our team can help guide your next architecture or interior project with clarity and care."
         buttonText="Connect With Us"
         buttonLink="/contact"
-        imgSrc={siteImages.projects.architecture.sceneEight}
       />
     </div>
   );

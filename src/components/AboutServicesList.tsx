@@ -11,7 +11,7 @@ const services = [
 
 const AboutServicesList = () => (
   <div>
-    <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-8">Services</p>
+    <p className="font-serif text-[40px] leading-tight text-foreground mb-8">Services</p>
     <div>
       {services.map((service, index) => (
         <div key={service} className="group relative py-6 md:py-7" data-gsap-item>

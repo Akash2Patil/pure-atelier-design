@@ -20,7 +20,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-20">
+    <div>
       <PageHero
         label="Contact"
         title="Let's talk about your next architecture or interior project"
@@ -31,8 +31,8 @@ const Contact = () => {
       <section className="py-24 lg:py-36 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <AnimatedSection>
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">Contact Information</p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground max-w-2xl">
+            <p className="font-serif text-[40px] leading-tight text-foreground mb-3">Contact Information</p>
+            <h1 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground max-w-2xl">
               Let’s Create Something Meaningful Together
             </h1>
             <p className="mt-8 text-muted-foreground max-w-2xl leading-relaxed">
@@ -99,7 +99,7 @@ const Contact = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail size={16} className="text-accent" />
-                    <span>hello@thedesignatelier.co.in</span>
+                    <span>info@thedesignatelier.co.in</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone size={16} className="text-accent" />
@@ -143,7 +143,6 @@ const Contact = () => {
         description="Book a conversation with us today and let's explore what your space can become together."
         buttonText="Get in Touch"
         buttonLink="/contact"
-        imgSrc={siteImages.projects.turnkey.interiorFour}
       />
     </div>
   );

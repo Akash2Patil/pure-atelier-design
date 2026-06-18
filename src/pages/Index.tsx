@@ -17,16 +17,41 @@ const slides = [
 ];
 
 const projects = [
-  { img: siteImages.home.highlighted.balajiAngan, title: "Balaji Angan", category: "Residential", tall: true },
-  { img: siteImages.home.highlighted.cambridgeSchool, title: "Cambridge School", category: "Institutional", tall: false },
-  { img: siteImages.home.highlighted.livingRoom, title: "Warm Residential Interior", category: "Interiors", tall: false },
-  { img: siteImages.home.highlighted.balajiVihar, title: "Balaji Vihar", category: "Architecture", tall: true },
-];
-
-const services = [
-  { title: "Architecture Design", desc: "Thoughtful structures that respond to context, light, and daily life." },
-  { title: "Interior Design", desc: "Refined interiors shaped by material, function, and atmosphere." },
-  { title: "Planning & Documentation", desc: "Clear technical planning, documentation, and coordination for seamless delivery." },
+  {
+    img: siteImages.home.highlighted.balajiAngan,
+    title: "Balaji Angan",
+    category: "Residential",
+    className: "md:col-span-5 md:row-span-2",
+    imageClassName: "h-[18rem] md:h-full",
+  },
+  {
+    img: siteImages.home.highlighted.cambridgeSchool,
+    title: "Cambridge School",
+    category: "Institutional",
+    className: "md:col-span-4",
+    imageClassName: "h-[14rem] md:h-[17rem]",
+  },
+  {
+    img: siteImages.home.highlighted.livingRoom,
+    title: "Warm Residential Interior",
+    category: "Interiors",
+    className: "md:col-span-3",
+    imageClassName: "h-[14rem] md:h-[17rem]",
+  },
+  {
+    img: siteImages.home.highlighted.balajiVihar,
+    title: "Balaji Vihar",
+    category: "Architecture",
+    className: "md:col-span-4",
+    imageClassName: "h-[14rem] md:h-[17rem]",
+  },
+  {
+    img: siteImages.home.highlighted.livingRoomTwo,
+    title: "Interior Detail",
+    category: "Interiors",
+    className: "md:col-span-3",
+    imageClassName: "h-[14rem] md:h-[17rem]",
+  },
 ];
 
 const clients = [
@@ -36,6 +61,25 @@ const clients = [
   "Greenfield Healthcare",
   "Luxury Residential Studio",
   "Retail Experience Design",
+];
+
+const reasons = [
+  {
+    title: "Clear design direction",
+    text: "We translate the brief into a practical, elegant plan before details start multiplying.",
+  },
+  {
+    title: "Execution-aware detailing",
+    text: "Drawings, materials, and site decisions are coordinated so the finished space stays true to intent.",
+  },
+  {
+    title: "Calm communication",
+    text: "You always know what is decided, what needs input, and what is moving next.",
+  },
+  {
+    title: "Long-term usability",
+    text: "Every choice is shaped around durability, comfort, and how the space will work over time.",
+  },
 ];
 
 const Index = () => {
@@ -116,8 +160,7 @@ const Index = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-12 pb-20 lg:pb-28">
           <AnimatedSection>
-            <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-6">The Design Atelier</p>
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-[1.05] max-w-3xl">
+            <h1 className="font-serif text-[clamp(2rem,4.6vw,4rem)] uppercase text-primary-foreground leading-[1.08] max-w-3xl">
               Designing Timeless Spaces with Purpose & Precision
             </h1>
           </AnimatedSection>
@@ -162,13 +205,13 @@ const Index = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24 lg:py-36 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 lg:py-28 px-6 lg:px-12">
+        <div className="max-w-6xl mx-auto">
           <AnimatedSection>
-            <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-14 gap-6">
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-6">
               <div>
-                <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-3">Selected Work</p>
-                <h2 className="font-serif text-3xl md:text-4xl text-foreground">Featured Projects</h2>
+                <p className="font-serif text-[40px] leading-tight text-foreground mb-2">Selected Work</p>
+                <h2 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground">Featured Projects</h2>
               </div>
               <Link to="/projects" className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-accent transition-colors duration-300">
                 All Projects <ArrowRight size={12} />
@@ -176,11 +219,11 @@ const Index = () => {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:auto-rows-[17rem]">
             {projects.map((p, i) => (
-              <AnimatedSection key={i} delay={i * 150}>
-                <Link to="/projects" className="group block overflow-hidden" data-home-image>
-                  <div className={`relative overflow-hidden ${p.tall ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+              <AnimatedSection key={i} delay={i * 150} className={p.className}>
+                <Link to="/projects" className="group block h-full overflow-hidden" data-home-image>
+                  <div className={`relative overflow-hidden ${p.imageClassName}`}>
                     <img
                       src={p.img}
                       alt={p.title}
@@ -188,9 +231,9 @@ const Index = () => {
                       className="home-hover-image w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                       <p className="text-xs tracking-[0.15em] uppercase text-primary-foreground/70">{p.category}</p>
-                      <h3 className="font-serif text-xl text-primary-foreground mt-1">{p.title}</h3>
+                      <h3 className="font-serif text-2xl text-primary-foreground mt-1">{p.title}</h3>
                     </div>
                   </div>
                 </Link>
@@ -204,13 +247,12 @@ const Index = () => {
       <section className="py-20 lg:py-28 px-6 lg:px-12 border-y border-border/80">
         <div className="max-w-7xl mx-auto">
           <AnimatedSection>
-            <div className="grid gap-8 lg:grid-cols-[0.75fr,1.25fr] lg:items-end" data-home-reveal>
-              <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Clients</p>
-              <h2 className="font-serif text-3xl md:text-4xl text-foreground">Trusted by forward-thinking clients across residential, hospitality, healthcare, and retail work.</h2>
+            <div data-home-reveal>
+              <p className="font-serif text-[40px] leading-tight text-foreground">Clients</p>
             </div>
           </AnimatedSection>
 
-          <div className="mt-12 overflow-hidden border-y border-border">
+          <div className="mt-8 overflow-hidden border-y border-border">
             <div
               className="flex gap-12 py-8"
               style={{ animation: "marquee 28s linear infinite" }}
@@ -230,8 +272,8 @@ const Index = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <AnimatedSection>
           <div data-home-reveal>
-          <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">About the Studio</p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground leading-[1.2] mb-8">
+          <p className="font-serif text-[40px] leading-tight text-foreground mb-3">About the Studio</p>
+          <h2 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground mb-8">
             Designing Spaces With Clarity & Character
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
@@ -256,94 +298,55 @@ const Index = () => {
       </div>
     </section>
 
-    {/* Services Preview */}
-    <section className="py-24 lg:py-36 px-6 lg:px-12">
+    {/* Why Choose Us */}
+    <section className="py-24 lg:py-32 px-6 lg:px-12 bg-background">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
-          <div className="grid gap-8 lg:grid-cols-[0.9fr,1.1fr] lg:items-end" data-home-reveal>
-            <div>
-              <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">What We Offer</p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
-                Design, documentation, and delivery shaped around the way a space will be lived in.
-              </h2>
-            </div>
-            <p className="max-w-xl text-muted-foreground leading-relaxed lg:ml-auto">
-              Our work moves from early spatial thinking to detailed coordination, keeping the design intent clear while making execution practical.
+          <div className="max-w-4xl" data-home-reveal>
+            <p className="font-serif text-[40px] leading-tight text-foreground mb-3">Why Choose Us</p>
+            <h2 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground">
+              A calm process for clients who want strong design without confusion.
+            </h2>
+            <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground">
+              We keep the design language refined and the project journey practical, with decisions that are easy to understand and easier to build.
             </p>
           </div>
         </AnimatedSection>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-[0.8fr,1.2fr] lg:items-stretch">
+        <div className="mt-14 grid gap-10 lg:grid-cols-[0.95fr,1.05fr] lg:items-stretch">
           <AnimatedSection delay={100}>
-            <div className="grid h-full min-h-[32rem] grid-rows-[1.2fr,0.8fr] gap-4" data-home-image>
-              <div className="group overflow-hidden">
-                <img src={siteImages.home.highlighted.livingRoomOne} alt="Refined interior palette" loading="lazy" className="home-hover-image h-full w-full object-cover" />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="group overflow-hidden">
-                  <img src={siteImages.home.highlighted.balajiAngan} alt="Residential architecture" loading="lazy" className="home-hover-image h-full w-full object-cover" />
-                </div>
-                <div className="group overflow-hidden">
-                  <img src={siteImages.home.highlighted.livingRoomTwo} alt="Interior project detail" loading="lazy" className="home-hover-image h-full w-full object-cover" />
-                </div>
+            <div className="relative h-[32rem] overflow-hidden bg-card" data-home-image>
+              <img
+                src={siteImages.home.highlighted.livingRoomOne}
+                alt="Warm interior designed by The Design Atelier"
+                loading="lazy"
+                className="home-hover-image absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 max-w-md p-8 text-primary-foreground">
+                <p className="font-serif text-[40px] leading-tight text-primary-foreground">Design Method</p>
+                <h3 className="mt-3 font-sans text-[24px] font-normal leading-relaxed text-primary-foreground/80">Thoughtful choices, clearly carried through.</h3>
               </div>
             </div>
           </AnimatedSection>
 
-          <div className="grid gap-5">
-            {services.map((s, i) => (
-              <AnimatedSection key={i} delay={i * 120}>
-                <div className="group grid gap-5 bg-card px-6 py-7 transition-colors duration-300 hover:bg-foreground md:grid-cols-[5rem,1fr] md:px-8" data-home-reveal>
-                  <p className="font-serif text-4xl text-accent transition-colors duration-300 group-hover:text-primary-foreground/70">
+          <div className="grid h-[32rem] gap-px overflow-hidden bg-border sm:grid-cols-2">
+            {reasons.map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 120}>
+                <div className="group flex h-full flex-col bg-card p-7 transition-colors duration-300 hover:bg-foreground" data-home-reveal>
+                  <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/60">
                     0{i + 1}
                   </p>
-                  <div>
-                    <h3 className="font-serif text-2xl text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
-                      {s.title}
-                    </h3>
-                    <p className="mt-4 text-muted-foreground leading-relaxed transition-colors duration-300 group-hover:text-primary-foreground/70">
-                      {s.desc}
-                    </p>
-                  </div>
+                  <h3 className="mt-8 font-serif text-2xl leading-tight text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/70">
+                    {item.text}
+                  </p>
                 </div>
               </AnimatedSection>
             ))}
           </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Why Choose Us */}
-    <section className="py-24 lg:py-36 px-6 lg:px-12 bg-background">
-      <div className="max-w-7xl mx-auto">
-        <AnimatedSection>
-          <div className="grid gap-8 lg:grid-cols-[0.75fr,1.25fr] lg:items-end" data-home-reveal>
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Why Choose Us</p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-foreground">
-              A calm process for clients who want strong design without confusion.
-            </h2>
-          </div>
-        </AnimatedSection>
-
-        <div className="mt-16 grid gap-0 lg:grid-cols-3">
-          {[
-            { title: "Client-focused design approach", text: "We shape each space around the people who will live, work, and gather there." },
-            { title: "Sustainable and future-ready solutions", text: "Our designs anticipate changing needs and support long-term usability." },
-            { title: "Transparent communication", text: "Clear direction, regular updates, and purposeful collaboration at every step." },
-          ].map((item, i) => (
-            <AnimatedSection key={i} delay={i * 150}>
-              <div className="relative min-h-[25rem] overflow-hidden border border-border bg-card p-8 lg:-ml-px" data-home-reveal>
-                <div className="relative z-10 flex h-full flex-col">
-                  <div className="mb-8 h-px w-full bg-border" />
-                  <h3 className="font-serif text-2xl mb-5 text-foreground">{item.title}</h3>
-                  <p className="max-w-sm text-muted-foreground leading-relaxed">{item.text}</p>
-                  <span className="mt-auto self-end font-serif text-7xl leading-none text-accent/45 md:text-8xl">
-                    0{i + 1}
-                  </span>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
         </div>
       </div>
     </section>
@@ -354,7 +357,6 @@ const Index = () => {
       description="Let’s create a space that is both beautiful and built to last, with purpose-driven design and careful execution."
       buttonText="Schedule a Consultation"
       buttonLink="/contact"
-      imgSrc={siteImages.about.studio}
     />
   </div>
   );

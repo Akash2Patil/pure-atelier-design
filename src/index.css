@@ -1,8 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Optima Local';
+  src: url('/fonts/optima.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   :root {
@@ -85,18 +92,32 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Optima Local', 'Fira Sans', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  h1, h2 {
+    font-size: 40px;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 18px;
   }
 
 }
 
 @layer utilities {
   .font-serif {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Optima Local', 'Fira Sans', sans-serif;
   }
 
   .font-sans {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
   }
 
   @keyframes marquee {
@@ -108,56 +129,20 @@
     }
   }
 
-  @keyframes image-drift {
-    from {
-      scale: 1;
-    }
-    to {
-      scale: 1.06;
-    }
-  }
-
-  @keyframes hero-slide-scale {
-    from {
-      scale: 1.08;
-    }
-    to {
-      scale: 1;
-    }
-  }
-
-  img {
-    animation: image-drift 12s ease-in-out infinite alternate;
-    transform-origin: center;
-    will-change: scale;
-  }
-
-  nav img {
-    animation: none;
+  .image-motion {
     scale: 1;
   }
 
-  .image-motion {
-    animation: image-drift 12s ease-in-out infinite alternate;
-    transform-origin: center;
-    will-change: scale;
-  }
-
   .hero-slide-motion {
-    animation: hero-slide-scale 6s ease-out forwards;
-    transform-origin: center;
-    will-change: scale;
+    scale: 1;
   }
 
   .home-hover-image {
     scale: 1;
-    transform-origin: center;
-    transition: scale 1200ms cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: scale;
   }
 
   .group:hover .home-hover-image {
-    scale: 1.09;
+    scale: 1;
   }
 
   .site-scroll-reveal {
@@ -176,13 +161,6 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    img,
-    .image-motion,
-    .hero-slide-motion {
-      animation: none;
-      scale: 1;
-    }
-
     .site-scroll-reveal {
       opacity: 1;
       translate: 0 0;

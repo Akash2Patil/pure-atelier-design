@@ -1,8 +1,8 @@
 const base = "/Website images";
 
 export const siteImages = {
-  logo: `${base}/Logo0.2.webp`,
-  landingLogo: `${base}/Landing page/Logo.png`,
+  logo: `${base}/logo 0.2.png`,
+  landingLogo: `${base}/Landing page/logo 0.2.png`,
   home: {
     slides: [
       `${base}/Landing page/slider images/1.png`,
@@ -49,6 +49,15 @@ export const siteImages = {
       renderTwo: `${base}/projects/Architecture/ChatGPT Image May 22, 2026, 06_50_05 PM.png`,
       renderThree: `${base}/projects/Architecture/ChatGPT Image May 22, 2026, 07_21_53 PM.png`,
       planRender: `${base}/projects/Architecture/Plan render s/A1  (FIRST FLOOR PLAN).jpg`,
+      planRenderA1png: `${base}/projects/Architecture/Plan render s/A1  (FIRST FLOOR PLAN).png`,
+      planRenderA2: `${base}/projects/Architecture/Plan render s/A2 (2ND TO 7TH FLOOR).jpg`,
+      planRenderA2png: `${base}/projects/Architecture/Plan render s/A2 (2ND TO 7TH FLOOR).png`,
+      planRenderA3: `${base}/projects/Architecture/Plan render s/A3 (8TH FLOOR PLAN).jpg`,
+      planRenderA3png: `${base}/projects/Architecture/Plan render s/A3 (8TH FLOOR PLAN).png`,
+      planRenderB1: `${base}/projects/Architecture/Plan render s/B1  (GROUND FLOOR PLAN- R.C. OFFICE).png`,
+      planRenderB2: `${base}/projects/Architecture/Plan render s/B2  (FIRST FLOOR PLAN- C.M. OFFICE).png`,
+      planRenderB3: `${base}/projects/Architecture/Plan render s/B3  (FIRST FLOOR PLAN- C.M. OFFICE).png`,
+      planRenderB4: `${base}/projects/Architecture/Plan render s/B4  (CLASS-I QUARTERS).png`,
     },
     videos: {
       architectureOne: `${base}/projects/Architecture/19980d4ce44bc690800813ee2ee2bc14.mp4`,

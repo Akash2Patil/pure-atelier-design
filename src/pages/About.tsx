@@ -89,7 +89,7 @@ const About = () => {
   }, []);
 
   return (
-    <div ref={pageRef} className="pt-20">
+    <div ref={pageRef}>
       <PageHero
         label="About Us"
         title="Designing Spaces With Clarity & Character"
@@ -100,8 +100,8 @@ const About = () => {
       <section className="py-24 lg:py-36 px-6 lg:px-12" data-gsap-section>
         <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-[0.8fr,1.2fr] lg:gap-20">
           <AnimatedSection>
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">About Us</p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1]">
+            <p className="font-serif text-[40px] leading-tight text-foreground mb-3">About Us</p>
+            <h1 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground">
               Designing Spaces With Clarity & Character
             </h1>
           </AnimatedSection>
@@ -124,8 +124,8 @@ const About = () => {
       <section className="py-24 lg:py-36 px-6 lg:px-12" data-gsap-section>
         <div className="max-w-7xl mx-auto">
           <AnimatedSection>
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">Our Philosophy</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">Design Thinking That Feels Right</h2>
+            <p className="font-serif text-[40px] leading-tight text-foreground mb-3">Our Philosophy</p>
+            <h2 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground mb-8">Design Thinking That Feels Right</h2>
             <p className="max-w-3xl text-muted-foreground leading-relaxed">
               Every project is different. Our thinking remains the same: clarity, long-term value, and human-centered design guide every decision.
             </p>
@@ -147,8 +147,8 @@ const About = () => {
       <section className="py-24 lg:py-36 px-6 lg:px-12" data-gsap-section>
         <div className="max-w-7xl mx-auto">
           <AnimatedSection>
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">Expertise</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">Focused Skills for Every Project</h2>
+            <p className="font-serif text-[40px] leading-tight text-foreground mb-3">Expertise</p>
+            <h2 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground mb-8">Focused Skills for Every Project</h2>
             <p className="max-w-3xl text-muted-foreground leading-relaxed">
               We bring architecture, interiors, documentation, and project coordination together to build spaces that work beautifully.
             </p>
@@ -169,8 +169,8 @@ const About = () => {
             </div>
           </AnimatedSection>
           <AnimatedSection delay={200}>
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">Principal Architect</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">Ar. Aditya Anil Mulay</h2>
+            <p className="font-serif text-[40px] leading-tight text-foreground mb-3">Principal Architect</p>
+            <h2 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground mb-8">Ar. Aditya Anil Mulay</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 With over 16 years of professional experience, Ar. Aditya Mulay brings together global exposure, technical expertise, and a refined understanding of modern architectural practices.
@@ -203,7 +203,6 @@ const About = () => {
         description="We work with thoughtful clients to create architecture and interiors that are grounded in context, function, and long-term value."
         buttonText="Schedule a Consultation"
         buttonLink="/contact"
-        imgSrc={siteImages.projects.architecture.sceneSeven}
       />
     </div>
   );

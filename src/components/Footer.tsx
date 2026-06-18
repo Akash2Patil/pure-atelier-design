@@ -27,7 +27,7 @@ const Footer = () => (
         <div>
           <h4 className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Connect</h4>
           <div className="flex flex-col gap-3 text-sm">
-            <span className="text-foreground">hello@thedesignatelier.co.in</span>
+            <span className="text-foreground">info@thedesignatelier.co.in</span>
             <span className="text-foreground">+91 9225 5363 55</span>
             <span className="text-foreground">No. 9, Vanraj Harshad Apartment, Opp. Modakeshwar Tennis Court, Modakeshwar Housing Society, Indira Nagar, Nashik 42009</span>
           </div>

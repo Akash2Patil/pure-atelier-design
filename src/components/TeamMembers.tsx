@@ -27,8 +27,8 @@ const TeamMembers = () => (
   <section className="py-24 lg:py-36 px-6 lg:px-12 bg-card">
     <div className="max-w-7xl mx-auto">
       <AnimatedSection>
-        <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">Meet the Team</p>
-        <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-12">A Small Team with Clear Design Focus</h2>
+        <p className="font-serif text-[40px] leading-tight text-foreground mb-3">Meet the Team</p>
+        <h2 className="font-sans text-[24px] font-normal leading-relaxed text-muted-foreground mb-12">A Small Team with Clear Design Focus</h2>
       </AnimatedSection>
 
       <div className="grid gap-10 md:grid-cols-3">
